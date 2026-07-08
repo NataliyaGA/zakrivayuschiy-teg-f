@@ -1,16 +1,409 @@
 /* Здесь вы напишете основную часть стилей страницы.
-
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
+✦ button__text — для обозначения текстового элемента внутри кнопки */
 
 .page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--bg-color);
+  background-image: var(--page-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
+}
+
+.header {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  outline: var(--border);
+  background-color: var(--bg-color);
+  inline-size: var(--block-width);
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: clamp(122px, 119.18px + 0.75vw, 130px);
+  padding-bottom: clamp(118px, 115.18px + 0.75vw, 126px);
+  font-family: var(--font-accent);
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.title-decor {
+  vertical-align: bottom;
+  font-family: inherit;
+  font-size: clamp(49px, 43.37px + 1.50vw, 65px);
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.title-phrase {
+  font-family: inherit;
+  font-size: clamp(14px, 10.83px + 0.85vw, 23px);
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.card {
+  margin-bottom: 50px;
+  outline: var(--border);
+  inline-size: var(--block-width);
+}
+
+.subtitle {
+  padding: 5px 10px;
+  font-family: var(--font-main); 
+  font-variation-settings: 'wght' var(--subtitle-weight);
+  font-size: var(--font-size);
+  line-height: 100%;
+  letter-spacing: 0%;
+  background-color: var(--bg-color);
+}
+
+.image-label {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.label {
+  position: absolute;
+  top: clamp(25px, 24.30px + 0.19vw, 27px);
+  right: clamp(13px, 8.77px + 1.13vw, 25px);
+  display: inline-block;
+  color: var(--contour-color);
+  font-family: var(--font-accent);
+  font-weight: var(--text-weight);
+  font-size: var(--button-label);
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-shadow:
+  -1px 0 var(--bg-color), 
+  0 1px var(--bg-color), 
+  1px 0 var(--bg-color), 
+  0 -1px var(--bg-color);
+  mix-blend-mode: hard-light;
+  filter: opacity(0.5);
+}
+
+@supports((text-stroke: 1px var(--bg-color)) or (-webkit-text-stroke: 1px var(--bg-color))) {
+  .label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
+  }
+}
+
+.image {
+  width: 100%;
+  border-top: var(--border);
+  border-bottom: var(--border);
+  object-fit: contain;
+  object-position: center;
+}
+
+.image-nulevoj-sprint {
+  object-fit: cover;
+  object-position: right;
+  overflow: hidden;
+  filter: saturate(150%);
+  aspect-ratio: 1 / 1;
+}
+
+.text-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 25px;
+  border: none;
+  padding: 25px;
+  font-family: var(--font-main);
+  font-variation-settings: 'wght' var(--text-weight);
+  font-size: var(--font-size);
+  line-height: 21px;
+  letter-spacing: 0%;
+  background-color: var(--bg-color);
+}
+
+.icon-like-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 19px;
+  align-self: flex-end;
+  width: 100%;
+  background-color: var(--bg-color);
+}
+
+.card__icon-button {
+  width: 40px;
+  height: 38px;
+  border: none;
+  outline: transparent;
+  background-color: inherit;
+  transition: outline 0.3s ease;
+  margin: 0px;
+  padding: 0px;
+}
+
+.card__icon-button:focus {
+  border: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: var(--border);
+}
+
+.like-icon {
+  margin: 0 auto;
+  padding: 0px;
+  box-sizing: border-box;
+  display: inline-block;
+  width: 39px; 
+  height: 36px;
+  transform-origin: center;
+}
+
+.like-icon .contour {
+  transition: fill 0.1s linear 0s;
+  fill: var(--contour-color);
+}
+
+.like-icon .core {
+  transition: fill 0.3s linear 0.03s;
+  fill: transparent;
+}
+
+.like-icon .main-body {
+  transition: fill 0.3s linear 0s;
+  fill: transparent;
+}
+
+.like-icon:hover .core {
+  transition: fill 0.3s linear 0s;
+  fill: var(--contour-color);
+}
+
+.like-icon:hover .main-body {
+  transition: fill 0.3s linear 0.05s;
+  fill: var(--contour-color);
+}
+
+.like-icon:active .core {
+  transition: fill 0.3s linear 0s;
+  fill: var(--animation-fill-color);
+}
+
+.like-icon:active .main-body {
+  transition: fill 0.3s linear 0.05s;
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .core {
+  transition: fill 0.3s linear 0s;
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .main-body {
+  transition: fill 0.3s linear 0.05s;
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s linear 0.06s;
+  fill: var(--animation-fill-color);
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s 1;
+}
+
+.like-icon.is-liked .sparks {
+  animation: spark-flash 0.3s ease-in 0.3s 1;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  border: none;
+  outline: var(--border);
+  background-color: inherit;
+}
+
+.button__text {
+  font-family: var(--font-accent);
+  font-weight: var(--text-weight);
+  font-size: var(--button-label);
+  line-height: 90%;
+  letter-spacing: 0%;
+  color: var(--bg-color);
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: difference;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border: none;
+  padding-bottom: clamp(100px, 98.94px + 0.28vw, 103px);
+  outline: none;
+  inline-size: var(--block-width);
+}
+
+.card__sohranit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: clamp(306px, 295.79px + 2.72vw, 335px);
+  height: clamp(55px, 94.21px + -2.72vw, 84px) /* 84px, viewport: 375px -> 55px, viewport: 1440px */;
+  border: none;
+  padding: 15px 20px;
+  outline: var(--border);
+  background-color: var(--bg-color);
+}
+
+.floppy {
+  width: var(--size-floppy);
+  height: var(--size-floppy);
+  mix-blend-mode: difference;
+  position: relative;
+  z-index: 1;
+}
+
+.form__ok-button[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: clamp(341px, 336.77px + 1.13vw, 353px);
+  height: 191px;
+  border: none;
+  padding: 0px clamp(30px, 46.23px + -1.13vw, 42px);
+  outline: var(--border);
+}
+
+.svg__span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.floppy-form {
+  width: 39px;
+  height: 39px;
+}
+
+.span-form {
+  font-family: var(--font-accent);
+  font-weight: var(--text-weight);
+  font-size: var(--button-label);
+  line-height: 150%;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+}
+
+.close {
+  align-self: stretch;
+  width: clapm(257px, 244.32px + 3.38vw, 293px);
+  height: 38px;
+  border: none;
+  outline: var(--border);
+}
+
+@media (375px <= width < 1439px) {
+ .card__sohranit-button {
+  flex-direction: column;
+ }
+ main, .header, .card, .footer {
+  width: 100%;
+  max-width: var(--block-width);
+ }
+}
+
+@media (min-width: 1440px) {
+  .card__sohranit-button {
+  flex-direction: row;
+ }
+}
+
+.image-chistyj-list {
+  filter: grayscale(50%);
+}
+
+.image-esli-ne-poluchitsya {
+  filter: brightness(150%);
+}
+
+.image-pogonya-za-idealom {
+  filter: brightness(90%);
+}
+
+.image-kto-ryadom {
+  filter: hue-rotate(25deg);
+}
+
+.image-obhodnye-strategii {
+  filter: sepia(100%);
+}
+
+.image-kogda-opuskayutsya-ruki {
+  filter: blur(10px);
+}
+
+.image-sejchas-ya-zdes {
+  filter: contrast(150%) saturate(150%) opacity(70%);
+}
+
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 75%);
+}
+
+.card__like-button, .card__sohranit-button, .close {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card__like-button:focus, .card__sohranit-button:focus, .close:focus {
+  border: none;
+  box-shadow: 2px 2px 0px var(--contour-color);
+}
+
+.card__like-button::before, .card__sohranit-button::before, .close::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--contour-color);
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.card__like-button:hover::before, .card__sohranit-button:hover::before, .close:hover::before {
+  transform: translateX(0%);
 }

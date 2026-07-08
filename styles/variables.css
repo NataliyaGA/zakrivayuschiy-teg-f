@@ -1,1 +1,19 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --block-width: clamp(375px, 260.56px + 30.52vw, 700px);
+  --size-floppy: clamp(21px, 30.46px + -0.66vw, 28px) /* 28px, viewport: 375px -> 21px, viewport: 1440px */;
+  --font-main: "Inter", sans-serif;
+  --font-accent: "Press Start 2P", monospace;
+  --subtitle-weight: 700;
+  --text-weight: 400;
+  --font-size: 18px;
+  --button-label: 14px;
+  --page-bg: 
+  repeating-linear-gradient(to right, rgb(211 211 211) 0px 2px, rgb(211 211 211 / 0) 2px 4px),
+  repeating-linear-gradient(to bottom, rgb(211 211 211) 0px 2px, rgb(211 211 211 / 0) 2px 4px),
+  linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
+  --bg-color: rgb(255 255 255);
+  --animation-fill-color: rgb(255 0 0);
+  --contour-color: rgb(0 0 0);
+  --border: 2px solid rgb(0 0 0);
+}
