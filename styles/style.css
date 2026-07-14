@@ -24,7 +24,7 @@
 
 .header {
   margin-top: 100px;
-  margin-bottom: 100px;
+  margin-bottom: clamp(98px, 100.70px + -0.19vw, 100px); /* 100px, viewport: 375px -> 98px, viewport: 1440px */
   border: var(--border);
   outline: none;
   background-color: var(--bg-color);
@@ -63,7 +63,8 @@
 
 .card {
   margin-bottom: 50px;
-  outline: var(--border);
+  border: var(--border);
+  outline: none;
   inline-size: var(--block-width);
 }
 
@@ -131,7 +132,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   gap: 25px;
-  border: none;
+  outline: none;
   padding: 25px;
   font-family: var(--font-main);
   font-size: var(--font-size);
@@ -145,7 +146,7 @@
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  gap: 19px;
+  gap: 12px;
   align-self: flex-end;
   width: 100%;
   background-color: var(--bg-color);
@@ -155,19 +156,18 @@
   width: 40px;
   height: 38px;
   margin: 0px;
-  border: none;
   padding: 0px;
-  outline: transparent;
+  border: transparent;
   background-color: inherit;
-  transition: outline 0.3s ease;
+  transition: border 0.3s ease;
 }
 
 .card__icon-button:focus {
-  border: none;
+  outline: none;
 }
 
 .card__icon-button:focus-visible {
-  outline: var(--border);
+  border: var(--border);
 }
 
 .like-icon {
@@ -263,7 +263,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  border: none;
   padding-bottom: clamp(100px, 98.94px + 0.28vw, 103px);
   outline: none;
   inline-size: var(--block-width);
@@ -290,9 +289,9 @@
 
 .form__ok-button[open] {
   width: clamp(341px, 336.77px + 1.13vw, 353px);
-  border: none;
+  outline: none;
   padding: 30px clamp(30px, 43.52px + -0.94vw, 40px);
-  outline: var(--border);
+  border: var(--border);
 }
 
 .form-button {
