@@ -1,4 +1,5 @@
 # Проектная работа «Закрывающий тег»  
+https://github.com/NataliyaGA/zakrivayuschiy-teg-f  
 https://nataliyaga.github.io/zakrivayuschiy-teg-f/  
   
 Цель задания - вспомнить и отрефлексировать пройденный к этому моменту путь, посмотреть на своё состояние и эмоции на разных этапах учёбы.  
