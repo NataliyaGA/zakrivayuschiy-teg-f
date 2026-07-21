@@ -116,6 +116,7 @@
   border-bottom: var(--border);
   object-fit: contain;
   object-position: center;
+  display: block;
 }
 
 .image-saturate {
@@ -156,7 +157,7 @@
   height: 38px;
   margin: 0px;
   padding: 0px;
-  border: transparent;
+  border: 2px solid transparent;
   background-color: inherit;
   transition: border 0.3s ease;
 }
@@ -287,10 +288,10 @@
 }
 
 .form__ok-button[open] {
-  width: clamp(341px, 336.77px + 1.13vw, 353px);
   outline: none;
   padding: 30px clamp(30px, 43.52px + -0.94vw, 40px);
   border: var(--border);
+  width: clamp(341px, 336.77px + 1.13vw, 353px);
 }
 
 .form-button {
@@ -300,7 +301,8 @@
   "close close";
   row-gap: 30px;
   column-gap: 20px;
-  width: clamp(257px, 244.32px + 3.38vw, 293px);
+  max-width: clamp(261px, 249.73px + 3.00vw, 293px);
+  box-sizing: border-box;
 }
 
 .floppy-form {
