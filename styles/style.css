@@ -270,7 +270,6 @@
 
 .card__save-button {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 8px;
   width: clamp(306px, 295.79px + 2.72vw, 335px);
@@ -281,15 +280,12 @@
 .floppy {
   position: relative;
   z-index: 1;
-  width: var(--size-floppy);
-  height: var(--size-floppy);
   color: var(--bg-color);
   mix-blend-mode: difference;
 }
 
 .form__ok-button[open] {
   outline: none;
-  padding: 30px clamp(30px, 43.52px + -0.94vw, 40px);
   border: var(--border);
   width: clamp(341px, 336.77px + 1.13vw, 353px);
 }
@@ -336,11 +332,25 @@
   width: 100%;
   max-width: var(--block-width);
  }
+ .form__ok-button[open] {
+  padding: 30px 40px;
+ }
+ .floppy {
+  width: 28px;
+  height: 28px;
+ }
 }
 
 @media (min-width: 1440px) {
   .card__save-button {
   flex-direction: row;
+ }
+ .form__ok-button[open] {
+  padding: 30px 30px;
+ }
+ .floppy {
+  width: 21px;
+  height: 21px;
  }
 }
 

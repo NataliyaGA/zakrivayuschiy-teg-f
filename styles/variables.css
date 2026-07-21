@@ -2,7 +2,6 @@
 
 :root {
   --block-width: clamp(375px, 260.56px + 30.52vw, 700px);
-  --size-floppy: clamp(21px, 30.46px + -0.66vw, 28px) /* 28px, viewport: 375px -> 21px, viewport: 1440px */;
   --font-main: "Inter", sans-serif;
   --font-accent: "Press Start 2P", fantasy;
   --subtitle-weight: 715;
