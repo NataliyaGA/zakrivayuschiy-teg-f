@@ -1,4 +1,4 @@
-# Проектная работа «Закрывающий тег»  
+# Четвертая и последняя проектная работа «Закрывающий тег»  
 https://github.com/NataliyaGA/zakrivayuschiy-teg-f  
 https://nataliyaga.github.io/zakrivayuschiy-teg-f/  
   
